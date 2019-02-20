@@ -6,6 +6,16 @@ require_once 'exclusive_book.php';
 
 class BookFactory {
     private $book;
+    /**
+     * create and return type of Book
+     *
+     * @param [string] $title
+     * @param [string] $authors
+     * @param [string] $isbn
+     * @param [string] $price
+     * @param [string] $type
+     * @return Book
+     */
     function makeBook($title,$authors,$isbn,$price,$type){
         
         switch ($type) {
@@ -19,7 +29,7 @@ class BookFactory {
                 $this->book = new ExclusiveBook($title,$authors,$isbn,$price);
                 break;
             default:
-                $this->book = new NewBook($title,$authors,$isbn,$price);
+                throw new Exception('Invalid type of book');
                 break;
         }
 

@@ -6,7 +6,11 @@ class Basket{
     public function __construct(){
         $this->basket = array();
     }
-
+    /**
+     * Return nunber of books in basket
+     *
+     * @return integer
+     */
     public function getNumberBooksIn(){
         $numberBooks = 0;
         foreach ($this->basket as $key => $item) {
@@ -16,6 +20,11 @@ class Basket{
         }
         return $numberBooks;
     }
+    /**
+     * return array of books in basket
+     *
+     * @return array Books
+     */
     public function getBooks(){
         $books = array();
         foreach ($this->basket as $key => $item) {
@@ -25,7 +34,11 @@ class Basket{
         }
         return $books;
     }
-
+    /**
+     * return total of amount in basket
+     *
+     * @return string
+     */
     public function getTotalPriceAmount(){
         $totalPrice = 0;
         foreach ($this->basket as $key => $item) {
