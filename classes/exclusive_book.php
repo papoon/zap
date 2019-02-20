@@ -1,6 +1,6 @@
 <?php
 
-require_once '../zap/interfaces/book.php';
+require_once '../interfaces/book.php';
 class ExclusiveBook implements BookInterface{
 
     private $title;
@@ -43,6 +43,6 @@ class ExclusiveBook implements BookInterface{
     }
     public function getPrice(){
         //$price = (double) $this->price * 0.1;
-        return $this->price;
+        return number_format((float)($this->price), 2, '.', '');
     }
 }
