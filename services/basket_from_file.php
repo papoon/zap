@@ -4,7 +4,8 @@ require_once '../classes/book_factory.php';
 /**
  * BasketFromFile class
  */
-class BasketFromFile{
+class BasketFromFile
+{
 
     private $file;
     private $basket;
@@ -18,7 +19,8 @@ class BasketFromFile{
      *
      * @return void
      */
-    public function addFileToBasket(){
+    public function addFileToBasket()
+    {
 
         /*$header = $this->file->getHeader();
         if($header !== array('type','title','isbn','price','authors')){
@@ -29,8 +31,8 @@ class BasketFromFile{
 
         foreach ($data as $key => $value) {
             $bookFactory = new BookFactory();
-            $book = $bookFactory->makeBook($value['title'], $value['authors'], $value['isbn'],  $value['price'], $value['type']);
-            
+            $book = $bookFactory->makeBook($value['title'], $value['authors'], $value['isbn'], $value['price'], $value['type']);
+
             $this->basket->addBook($book);
         }
     }
@@ -39,8 +41,9 @@ class BasketFromFile{
      *
      * @return array
      */
-    public function getFileData(){
-        $data = $this->file->read($header=true);
+    public function getFileData()
+    {
+        $data = $this->file->read($header = true);
 
         return $data;
     }

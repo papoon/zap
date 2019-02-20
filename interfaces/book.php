@@ -1,6 +1,7 @@
 <?php
 
-interface BookInterface{
+interface BookInterface
+{
     public function getTitle();
     public function getAuthors();
     public function getISBN();

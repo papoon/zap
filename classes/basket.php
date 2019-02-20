@@ -1,9 +1,11 @@
 <?php
 
-class Basket{
+class Basket
+{
     private $basket;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->basket = array();
     }
     /**
@@ -11,10 +13,11 @@ class Basket{
      *
      * @return integer
      */
-    public function getNumberBooksIn(){
+    public function getNumberBooksIn()
+    {
         $numberBooks = 0;
         foreach ($this->basket as $key => $item) {
-            if($item instanceof BookInterface){
+            if ($item instanceof BookInterface) {
                 $numberBooks++;
             }
         }
@@ -25,10 +28,11 @@ class Basket{
      *
      * @return array Books
      */
-    public function getBooks(){
+    public function getBooks()
+    {
         $books = array();
         foreach ($this->basket as $key => $item) {
-            if($item instanceof BookInterface){
+            if ($item instanceof BookInterface) {
                 $books[] = $item;
             }
         }
@@ -39,17 +43,19 @@ class Basket{
      *
      * @return string
      */
-    public function getTotalPriceAmount(){
+    public function getTotalPriceAmount()
+    {
         $totalPrice = 0;
         foreach ($this->basket as $key => $item) {
-            if($item instanceof BookInterface){
+            if ($item instanceof BookInterface) {
                 $totalPrice += $item->getPrice();
             }
         }
         return number_format((float)($totalPrice), 2, '.', '');
     }
 
-    public function addBook(BookInterface $book){
+    public function addBook(BookInterface $book)
+    {
         $this->basket[] = $book;
     }
 }

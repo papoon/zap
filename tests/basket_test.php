@@ -3,12 +3,14 @@
 require_once '../zap/classes/basket.php';
 require_once '../zap/classes/book_factory.php';
 
-class BasketTest extends PHPUnit_Framework_TestCase{
+class BasketTest extends PHPUnit_Framework_TestCase
+{
 
     protected $basket;
     protected $book;
     protected $bookFactory;
-    protected function setUp(){
+    protected function setUp()
+    {
 
         $this->basket = new Basket();
         $this->bookFactory = new BookFactory();
@@ -16,13 +18,16 @@ class BasketTest extends PHPUnit_Framework_TestCase{
         $this->basket->addBook($this->book);
         $this->basket->addBook($this->book);
     }
-    public function testGetNumberBooksIn(){
-        $this->assertEquals('2',$this->basket->getNumberBooksIn());
+    public function testGetNumberBooksIn()
+    {
+        $this->assertEquals('2', $this->basket->getNumberBooksIn());
     }
-    public function testGetTotalPriceAmount(){
-        $this->assertEquals('50.00',$this->basket->getTotalPriceAmount());
+    public function testGetTotalPriceAmount()
+    {
+        $this->assertEquals('50.00', $this->basket->getTotalPriceAmount());
     }
-    protected function tearDown(){
-        $this->basket = NULL;
+    protected function tearDown()
+    {
+        $this->basket = null;
     }
 }

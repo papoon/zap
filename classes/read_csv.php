@@ -1,15 +1,18 @@
 <?php
+
 /**
  * ReadCSV class
  */
-class ReadCSV{
+class ReadCSV
+{
 
     private $delimiter = ';';
     private $enclosed = '"';
     private $csv;
-    private $chunk  = 1000;
+    private $chunk = 1000;
     private $handle;
-    public function __construct(){
+    public function __construct()
+    {
         $this->csv = array();
     }
     /**
@@ -18,7 +21,8 @@ class ReadCSV{
      * @param [string] $file
      * @return void
      */
-    public function open($file){
+    public function open($file)
+    {
         $this->handle = fopen($file, "r");
     }
     /**
@@ -26,15 +30,17 @@ class ReadCSV{
      *
      * @return string
      */
-    public function getHeaderString(){
-        return implode($this->delimiter,fgetcsv($this->handle));
+    public function getHeaderString()
+    {
+        return implode($this->delimiter, fgetcsv($this->handle));
     }
     /**
      * return first line from file
      *
      * @return array
      */
-    public function getHeader(){
+    public function getHeader()
+    {
         return fgetcsv($this->handle);
     }
     /**
@@ -42,7 +48,8 @@ class ReadCSV{
      *
      * @return array
      */
-    public function getFistLine(){
+    public function getFistLine()
+    {
         return fgetcsv($this->handle);
     }
     /**
@@ -51,15 +58,15 @@ class ReadCSV{
      * @param boolean $header
      * @return array
      */
-    public function readLineByLine($header=false){
-        
-        if(!$header){
+    public function readLineByLine($header = false)
+    {
+
+        if (!$header) {
             $this->getFistLine();
         }
-        if(($line = $this->getFistLine()) !== FALSE){
+        if (($line = $this->getFistLine()) !== false) {
             return $line;
-        }
-        else{
+        } else {
             return false;
         }
     }
@@ -69,14 +76,14 @@ class ReadCSV{
      * @param boolean $header
      * @return array
      */
-    public function read($header = false){
+    public function read($header = false)
+    {
         $header = $this->getHeader();
-        while (($row = fgetcsv($this->handle)) !== FALSE) {
-            if(!$header){
+        while (($row = fgetcsv($this->handle)) !== false) {
+            if (!$header) {
                 $this->csv[] = $header;
-            }
-            else{
-                $this->csv[] = array_combine($header,$row);
+            } else {
+                $this->csv[] = array_combine($header, $row);
             }
         }
 
@@ -88,7 +95,8 @@ class ReadCSV{
      * @param [string] $delimiter
      * @return void
      */
-    public function setDelimiter($delimiter){
+    public function setDelimiter($delimiter)
+    {
         $this->delimiter = $delimiter;
     }
     /**
@@ -96,15 +104,16 @@ class ReadCSV{
      *
      * @return void
      */
-    public function close(){
+    public function close()
+    {
         fclose($this->handle);
     }
 
     public function __destruct()
     {
-        if($this->handle != NULL){
+        if ($this->handle != null) {
             fclose($this->handle);
         }
-        
+
     }
 }

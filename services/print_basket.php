@@ -43,13 +43,14 @@ function main($file = '', $options = '')
     $basketFromFile->addFileToBasket();
 
     if ($options == '-displayauthors') {
-        printToconsole($basket,$options);
+        printToconsole($basket, $options);
     } else {
         printToFile($basket);
     }
 
 }
-function printBasket($basket,$options=""){
+function printBasket($basket, $options = "")
+{
 
     $books = $basket->getBooks();
     $text = "";
@@ -67,10 +68,9 @@ function printBasket($basket,$options=""){
         //$book_price = str_pad($book_price, ((strlen($book_price)) == 5 ? strlen($book_price)+1 : strlen($book_price)+0),' ',STR_PAD_LEFT);
         $book_price = str_pad($book_price, (strlen($book_price) + (strlen($totalPriceAmount) - strlen($book_price))), ' ', STR_PAD_LEFT);
 
-        if($options == '-displayauthors'){
+        if ($options == '-displayauthors') {
             $text .= "€ $book_price_original/$book_price: $book_title - $book_authors" . PHP_EOL;
-        }
-        else{
+        } else {
             $text .= "€ $book_price [$type] $book_isbn: $book_title - $book_authors" . PHP_EOL;
         }
     }
@@ -85,9 +85,9 @@ function printToFile($basket)
     file_put_contents('output.txt', $text);
 
 }
-function printToConsole($basket,$options="")
+function printToConsole($basket, $options = "")
 {
-    $text = printBasket($basket,$options);
+    $text = printBasket($basket, $options);
     echo $text;
 
 }

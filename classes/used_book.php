@@ -4,13 +4,14 @@ require_once '../interfaces/book.php';
 /**
  * UsedBook class
  */
-class UsedBook implements BookInterface{
+class UsedBook implements BookInterface
+{
 
     private $title;
     private $authors;
     private $isbn;
     private $price;
-    public function __construct($title,$authors,$isbn,$price)
+    public function __construct($title, $authors, $isbn, $price)
     {
         $this->title = $title;
         $this->authors = $authors;
@@ -18,39 +19,43 @@ class UsedBook implements BookInterface{
         $this->price = $price;
     }
     /**
-     * Undocumented function
+     * Define title
      *
      * @param [string] $title
      * @return void
      */
-    public function setTitle($title){
+    public function setTitle($title)
+    {
         $this->title = $title;
     }
     /**
-     * Undocumented function
+     * Define authors
      *
      * @param [string] $authors
      * @return void
      */
-    public function setAuthors($authors){
+    public function setAuthors($authors)
+    {
         $this->authors = $authors;
     }
     /**
-     * Undocumented function
+     * define isbn
      *
      * @param [string] $isbn
      * @return void
      */
-    public function setISBN($isbn){
+    public function setISBN($isbn)
+    {
         $this->isbn = $isbn;
     }
     /**
-     * Undocumented function
+     * Define price
      *
      * @param [string] $price
      * @return void
      */
-    public function setPrice($price){
+    public function setPrice($price)
+    {
         $this->price = $price;
     }
     /**
@@ -58,7 +63,8 @@ class UsedBook implements BookInterface{
      *
      * @return void
      */
-    public function getTitle(){
+    public function getTitle()
+    {
         return $this->title;
     }
     /**
@@ -66,7 +72,8 @@ class UsedBook implements BookInterface{
      *
      * @return void
      */
-    public function getAuthors(){
+    public function getAuthors()
+    {
         return $this->authors;
     }
     /**
@@ -74,7 +81,8 @@ class UsedBook implements BookInterface{
      *
      * @return void
      */
-    public function getISBN(){
+    public function getISBN()
+    {
         return $this->isbn;
     }
     /**
@@ -82,8 +90,9 @@ class UsedBook implements BookInterface{
      *
      * @return void
      */
-    public function getPrice(){
-        $price = (double) $this->price * 0.25;
+    public function getPrice()
+    {
+        $price = (double)$this->price * 0.25;
         return number_format((float)($this->price - $price), 2, '.', '');
     }
     /**
@@ -91,7 +100,8 @@ class UsedBook implements BookInterface{
      *
      * @return void
      */
-    public function getOriginalPrice(){
+    public function getOriginalPrice()
+    {
         return number_format((float)($this->price), 2, '.', '');
     }
 }
