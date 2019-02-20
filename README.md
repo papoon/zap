@@ -1,6 +1,6 @@
 # Book Store
 
-##Descrição
+## Descrição
 
 Uma livraria vende 3 tipos de livros. Livros usados, livros novos e livros exclusivos.
 Os livros exclusivos não têm desconto. Os livros novos têm desconto de 10% e os usados de 25%.
@@ -24,14 +24,14 @@ Deve ser possivel importar um csv com um cesto. A primeira linha tem os headers 
 por linha.
 Os autores estão separados pelo caracter | (barra vertical).
 
-#Indicações
+# Indicações
 
 * 1. Um programa que aplique os conceitos DRY e use os principios de OOP. Classes para os diferentes
 tipos de livros e para o carrinho. Cada livro deverá ser uma instancia da respetiva classe.
 * 2. Usar polimorfismo
 * 3. Programar em inglês
 
-#Bônus
+# Bônus
 
 Conjunto de funcionalidades extra, opcionais ao exercicio:
 
