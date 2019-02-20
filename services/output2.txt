@@ -1,8 +1,8 @@
 
-€ 25.00/ 25.00: Introduction to Python - Guido van rossum
+€  25.00/ 25.00: Introduction to Python - Guido van rossum
 € 140.00/105.00: The Art of Computer Programming - Donalth Knuth
-€ 40.00/ 36.00: JavaScript: The Good Parts - Douglas Crockford
+€  40.00/ 36.00: JavaScript: The Good Parts - Douglas Crockford
 € 140.00/105.00: The Art of Computer Programming - Donalth Knuth
-€ 30.00/ 22.50: The C Programming Language - Dennis M. Ritchie, Brian W. Kernighan
-€ 30.00/ 27.00: The C Programming Language - Dennis M. Ritchie, Brian W. Kernighan
+€  30.00/ 22.50: The C Programming Language - Dennis M. Ritchie, Brian W. Kernighan
+€  30.00/ 27.00: The C Programming Language - Dennis M. Ritchie, Brian W. Kernighan
 € 320.50 - Total

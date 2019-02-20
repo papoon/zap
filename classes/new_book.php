@@ -1,6 +1,6 @@
 <?php
 
-require_once '../interfaces/book.php';
+require_once dirname(__DIR__).'\interfaces\book.php';
 /**
  * NewBook class
  */

@@ -57,6 +57,9 @@ cmd : php print_basket.php file -displayauthors
 
 cmd : php print_basket.php file -displayauthors > output.txt
 
+cmd : curl -i -X GET localhost/zap/api/v1/basket.php
+
+cmd : curl -i -X POST -F "file=@path_file" localhost/zap/api/v1/basket.php 
 ```
 
 ## Authors

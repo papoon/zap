@@ -2,8 +2,8 @@
 <?php
 
 require_once 'basket_from_file.php';
-require_once '../classes/basket.php';
-require_once '../classes/read_csv.php';
+require_once dirname(__DIR__) . '\classes\basket.php';
+require_once dirname(__DIR__) . '\classes\read_csv.php';
 
 $nunberArgs = 0;
 if (!empty($argv)) {
@@ -22,7 +22,6 @@ switch ($nunberArgs) {
         main($argv[1], $argv[2]);
         break;
     default:
-        main($file = '../tests/basket.csv', $options = '');
         break;
 }
 
@@ -44,6 +43,8 @@ function main($file = '', $options = '')
 
     if ($options == '-displayauthors') {
         printToconsole($basket, $options);
+    } elseif ($options == '-basket') {
+        return $basket;
     } else {
         printToFile($basket);
     }
@@ -67,6 +68,7 @@ function printBasket($basket, $options = "")
 
         //$book_price = str_pad($book_price, ((strlen($book_price)) == 5 ? strlen($book_price)+1 : strlen($book_price)+0),' ',STR_PAD_LEFT);
         $book_price = str_pad($book_price, (strlen($book_price) + (strlen($totalPriceAmount) - strlen($book_price))), ' ', STR_PAD_LEFT);
+        $book_price_original = str_pad($book_price_original, (strlen($book_price_original) + (strlen($totalPriceAmount) - strlen($book_price_original))), ' ', STR_PAD_LEFT);
 
         if ($options == '-displayauthors') {
             $text .= "€ $book_price_original/$book_price: $book_title - $book_authors" . PHP_EOL;

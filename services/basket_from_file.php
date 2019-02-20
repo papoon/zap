@@ -1,6 +1,6 @@
 <?php
 
-require_once '../classes/book_factory.php';
+require_once dirname(__DIR__).'\classes\book_factory.php';
 /**
  * BasketFromFile class
  */
